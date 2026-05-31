@@ -1,74 +1,105 @@
-# AI Email Spam Detection System
+# RNN-Based SMS Spam Detection System
 
-An end-to-end Machine Learning project that detects whether an email or SMS message is **Spam** or **Not Spam** using Deep Learning. The project combines a TensorFlow/Keras LSTM model, a FastAPI backend, and a Flutter mobile application to provide real-time spam detection through an intuitive user interface.
+An end-to-end Deep Learning project that classifies SMS messages as **Spam** or **Ham** using Recurrent Neural Networks (RNNs). The project combines a TensorFlow/Keras LSTM model, a FastAPI backend, and a Flutter mobile application to provide real-time message classification through a modern user interface.
 
 ---
 
 # Overview
 
-Spam messages remain one of the most common forms of unwanted communication across email and messaging platforms. This project leverages Recurrent Neural Networks (RNNs), specifically Long Short-Term Memory (LSTM) networks, to classify text messages based on their content.
+Spam messages continue to be a major challenge in digital communication systems. This project explores the application of Recurrent Neural Networks for text classification by training a Long Short-Term Memory (LSTM) network on SMS messages.
 
-Users can paste an email or SMS into the Flutter application, which communicates with a FastAPI server hosting the trained model. The server processes the text and returns a prediction along with a confidence score.
+The trained model learns sequential patterns within text and predicts whether a message belongs to the **Spam** or **Ham** category. Users can enter a message in the Flutter application, which communicates with a FastAPI backend hosting the trained model and returns the prediction along with a confidence score.
 
 ---
 
-#  Features
+# Project Objectives
 
-* Deep Learning based spam detection
-* Real-time prediction through API integration
-* FastAPI backend for model serving
-* Flutter mobile application
+* Understand text classification using Recurrent Neural Networks.
+* Compare the performance of Simple RNN, LSTM, and GRU architectures.
+* Build a complete NLP pipeline from preprocessing to deployment.
+* Deploy a trained RNN model through a REST API.
+* Integrate Deep Learning predictions into a Flutter mobile application.
+
+---
+
+# Features
+
+* SMS Spam/Ham classification
+* Recurrent Neural Network-based architecture
+* LSTM model for sequence learning
+* FastAPI inference service
+* Flutter mobile interface
 * Provider state management
+* Real-time predictions
 * Confidence score reporting
-* Clean and modern user interface
-* Scalable architecture for future NLP models
-* Supports both SMS and email content
+* End-to-end deployment pipeline
 
 ---
 
-# Machine Learning Pipeline
+# Dataset
 
-The model follows a complete Natural Language Processing workflow:
+The model is trained on the SMS Spam Collection dataset.
+
+Categories:
+
+* Spam
+* Ham
+
+Example:
+
+Spam:
+
+```text
+Congratulations! You've won a free prize. Click here now.
+```
+
+Ham:
+
+```text
+Hey, are we still meeting tomorrow?
+```
+
+---
+
+# Natural Language Processing Pipeline
+
+The project implements the following NLP workflow:
 
 1. Text preprocessing
 2. Tokenization
-3. Vocabulary creation
+3. Vocabulary construction
 4. Sequence generation
 5. Sequence padding
-6. Word embedding
-7. LSTM-based classification
-8. Binary prediction (Spam / ham)
-
-The model is trained using TensorFlow/Keras and optimized using the Adam optimizer with Binary Cross-Entropy loss.
+6. Word embeddings
+7. Recurrent sequence learning
+8. Binary classification
 
 ---
 
 # Model Architecture
 
-The spam detection model consists of:
+The implemented LSTM model consists of:
 
 * Embedding Layer
 * LSTM Layer
-* Dense Hidden Layer
-* Dropout Regularization
+* Dense Layer
+* Dropout Layer
 * Sigmoid Output Layer
 
-This architecture enables the network to learn contextual relationships between words and identify patterns commonly found in spam messages.
+The architecture is designed to capture sequential dependencies in text and learn contextual patterns that distinguish spam messages from ham messages.
 
 ---
 
 # Prediction Output
 
-The system returns:
+The API returns:
 
-* Predicted Label
+* Message
+* Predicted Class
 
   * Spam
-  * ham
-
+  * Ham
 * Confidence Score
-
-  * Probability associated with the prediction
 
 Example:
 
@@ -84,17 +115,17 @@ Example:
 
 # Flutter Application
 
-The mobile application provides:
+The Flutter application provides:
 
-* Multiline message input
-* Real-time API communication
+* Message input screen
+* API integration
 * Loading states
-* Prediction results
-* Confidence visualization
+* Prediction display
+* Confidence reporting
 * Error handling
 * Responsive Material Design interface
 
-The application uses Provider for state management and communicates with the FastAPI backend using HTTP requests.
+Provider is used for state management and communication with the FastAPI backend.
 
 ---
 
@@ -104,48 +135,49 @@ The backend is responsible for:
 
 * Loading the trained LSTM model
 * Loading the tokenizer
-* Preprocessing incoming text
-* Performing inference
-* Returning prediction results as JSON
-
-The API serves as the bridge between the Flutter frontend and the TensorFlow model.
+* Converting text into sequences
+* Applying sequence padding
+* Running inference
+* Returning predictions as JSON
 
 ---
 
 # Technologies Used
 
-### Machine Learning
+## Deep Learning
 
 * TensorFlow
 * Keras
 * NumPy
+
+## Data Processing
+
 * Pandas
 * Scikit-Learn
 
-### Backend
+## Backend
 
 * FastAPI
 * Uvicorn
 * Pydantic
 
-### Mobile Application
+## Mobile Application
 
 * Flutter
 * Provider
-* HTTP Package
+* HTTP
 
 ---
 
-# Future Improvements
+# Future Work
 
-* Compare Simple RNN, LSTM, and GRU performance
-* TensorFlow Lite integration for on-device inference
-* Email subject analysis
+* Performance comparison between Simple RNN, LSTM, and GRU
+* Bidirectional LSTM implementation
+* Attention-based architectures
+* TensorFlow Lite deployment
 * Multi-language spam detection
-* Spam severity scoring
-* Batch message processing
+* Real email classification datasets
 * Cloud deployment
-* User prediction history
 
 ---
 
@@ -153,16 +185,17 @@ The API serves as the bridge between the Flutter frontend and the TensorFlow mod
 
 This project demonstrates practical implementation of:
 
-* Natural Language Processing (NLP)
-* Deep Learning for Text Classification
-* Recurrent Neural Networks
-* Long Short-Term Memory Networks (LSTM)
-* API Development with FastAPI
-* Flutter and Provider State Management
-* Machine Learning Model Deployment
+* Recurrent Neural Networks (RNNs)
+* Long Short-Term Memory Networks (LSTMs)
+* Sequence Modeling
+* Natural Language Processing
+* Text Classification
+* Model Deployment with FastAPI
+* Flutter and Provider Integration
+* End-to-End Deep Learning Applications
 
 ---
 
 # License
 
-This project is developed for educational and learning purposes and may be extended for research, portfolio, or production use.
+This project is intended for educational, research, and portfolio purposes.
