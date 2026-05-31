@@ -167,17 +167,6 @@ The backend is responsible for:
 * Provider
 * HTTP
 
----
-
-# Future Work
-
-* Performance comparison between Simple RNN, LSTM, and GRU
-* Bidirectional LSTM implementation
-* Attention-based architectures
-* TensorFlow Lite deployment
-* Multi-language spam detection
-* Real email classification datasets
-* Cloud deployment
 
 ---
 
